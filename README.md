@@ -2,4 +2,5 @@
 An advent calendar for developers, here's mine in C++ for 2022
 
 ## Links
-https://adventofcode.com/
+About: https://adventofcode.com/
+2022: https://adventofcode.com/2022
