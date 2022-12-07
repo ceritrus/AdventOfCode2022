@@ -1,6 +1,5 @@
-![GitHub top language](https://img.shields.io/github/languages/top/ceritrus/AdventOfCode2022)
-
 # AdventOfCode2022
+![GitHub top language](https://img.shields.io/github/languages/top/ceritrus/AdventOfCode2022)
 An advent calendar for developers, here's mine for 2022
 
 ## Links

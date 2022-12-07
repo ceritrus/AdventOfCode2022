@@ -44,7 +44,6 @@ int checktree(vector<string> dirpath) {
         }
     }
     return (size);
-    
 }
 
 void exec(vector<string> input) {
