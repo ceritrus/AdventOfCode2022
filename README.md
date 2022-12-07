@@ -4,7 +4,7 @@
 An advent calendar for developers, here's mine for 2022
 
 ## Links
-About: https://adventofcode.com \n
+About: https://adventofcode.com \
 2022 edition: https://adventofcode.com/2022
 
 ## Install:
