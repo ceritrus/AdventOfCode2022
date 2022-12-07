@@ -1,9 +1,10 @@
 # AdventOfCode2022
 ![GitHub top language](https://img.shields.io/github/languages/top/ceritrus/AdventOfCode2022)
+[![CodeFactor](https://www.codefactor.io/repository/github/ceritrus/adventofcode2022/badge/main)](https://www.codefactor.io/repository/github/ceritrus/adventofcode2022/overview/main)
 An advent calendar for developers, here's mine for 2022
 
 ## Links
-About: https://adventofcode.com
+About: https://adventofcode.com \
 2022 edition: https://adventofcode.com/2022
 
 ## Install:
