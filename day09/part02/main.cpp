@@ -13,30 +13,29 @@ int distance(int a, int b) {
 }
 
 void movetail(pair<int, int> &head, pair<int, int> &tail) {
-    if (distance(head.first, tail.first) == 0 && distance(head.second, tail.second) == 0) { // don't move
-        return;
-    }
-    else if (distance(head.first, tail.first) > 1 && distance(head.second, tail.second) == 0) { // move x
-        if (head.first > tail.first)
-            tail.first++;
-        else
-            tail.first--;
-    }
-    else if (distance(head.first, tail.first) == 0 && distance(head.second, tail.second) > 1) { // move y
-        if (head.second > tail.second)
-            tail.second++;
-        else
-            tail.second--;
-    }
-    else if (distance(head.first, tail.first) > 1 || distance(head.second, tail.second) > 1) { // move diagonal
-        if (head.first > tail.first)
-            tail.first++;
-        else
-            tail.first--;
-        if (head.second > tail.second)
-            tail.second++;
-        else
-            tail.second--;
+    if (!(distance(head.first, tail.first) == 0 && distance(head.second, tail.second) == 0)) { // don't move
+        if (distance(head.first, tail.first) > 1 && distance(head.second, tail.second) == 0) { // move x
+            if (head.first > tail.first)
+                tail.first++;
+            else
+                tail.first--;
+        }
+        else if (distance(head.first, tail.first) == 0 && distance(head.second, tail.second) > 1) { // move y
+            if (head.second > tail.second)
+                tail.second++;
+            else
+                tail.second--;
+        }
+        else if (distance(head.first, tail.first) > 1 || distance(head.second, tail.second) > 1) { // move diagonal
+            if (head.first > tail.first)
+                tail.first++;
+            else
+                tail.first--;
+            if (head.second > tail.second)
+                tail.second++;
+            else
+                tail.second--;
+        }
     }
 }
 
