@@ -5,37 +5,37 @@
 #include <vector>
 using namespace std;
 
-int distance(int a, int b) {
-    if (a > b)
-        return (a - b);
+int xdistance(pair <int, int> a, pair <int, int> b) {
+    if (a.first > b.first)
+        return (a.first - b.first);
     else
-        return (b - a);
+        return (b.first - a.first);
+}
+
+int ydistance(pair <int, int> a, pair <int, int> b) {
+    if (a.second > b.second)
+        return (a.second - b.second);
+    else
+        return (b.second - a.second);
+}
+
+int movetowards(int a, int b) {
+    if (a > b)
+        return (a - 1);
+    else
+        return (a + 1);
 }
 
 void movetail(pair<int, int> &head, pair<int, int> &tail) {
-    if (!(distance(head.first, tail.first) == 0 && distance(head.second, tail.second) == 0)) { // don't move
-        if (distance(head.first, tail.first) > 1 && distance(head.second, tail.second) == 0) { // move x
-            if (head.first > tail.first)
-                tail.first++;
-            else
-                tail.first--;
-        }
-        else if (distance(head.first, tail.first) == 0 && distance(head.second, tail.second) > 1) { // move y
-            if (head.second > tail.second)
-                tail.second++;
-            else
-                tail.second--;
-        }
-        else if (distance(head.first, tail.first) > 1 || distance(head.second, tail.second) > 1) { // move diagonal
-            if (head.first > tail.first)
-                tail.first++;
-            else
-                tail.first--;
-            if (head.second > tail.second)
-                tail.second++;
-            else
-                tail.second--;
-        }
+    if (xdistance(head, tail) > 1 && ydistance(head, tail) == 0) { // move x
+        tail.first = movetowards(tail.first, head.first);
+    }
+    else if (xdistance(head, tail) == 0 && ydistance(head, tail) > 1) { // move y
+        tail.second = movetowards(tail.second, head.second);
+    }
+    else if (xdistance(head, tail) > 1 || ydistance(head, tail) > 1) { // move diagonal
+        tail.first = movetowards(tail.first, head.first);
+        tail.second = movetowards(tail.second, head.second);
     }
 }
 
@@ -57,7 +57,8 @@ void exec(vector<string> input) {
                 head.first++;
             else if (move.first == 'L')
                 head.first--;
-            movetail(head, tail);
+            if (head != tail)
+                movetail(head, tail);
             visited.push_back(tail);
         }
     }
